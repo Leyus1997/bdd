@@ -1,5 +1,5 @@
 --scrip 6
-drop table videojuegos
+drop table transacciones
 create table transacciones(
     codigo int not null,
     numero_cuenta char(5) not null,
@@ -9,7 +9,7 @@ create table transacciones(
     hora time not null,
 
     constraint transaccion_pk primary key (codigo)
-)
+);
 insert into transacciones(codigo,numero_cuenta,monto,tipo,fecha,hora)
 values  (1001, '12345', 150.75, 'C', '15-03-2023', '10:30');
 insert into transacciones(codigo,numero_cuenta,monto,tipo,fecha,hora)
@@ -30,4 +30,11 @@ insert into transacciones(codigo,numero_cuenta,monto,tipo,fecha,hora)
 values (1009, '45678', 90.70, 'C', '23-03-2023', '17:00');
 insert into transacciones(codigo,numero_cuenta,monto,tipo,fecha,hora)
 values (1010, '90123', 400.80, 'D', '24-03-2023', '08:30');
-select * from transacciones
+insert into transacciones(codigo,numero_cuenta,monto,tipo,fecha,hora)
+values (1011, '90123', 400.80, 'D', '24-09-2023', '14:30');
+select * from transacciones;
+update transacciones set tipo='T' 
+WHERE monto>money(100)  and monto<money(500)
+AND  DATE_PART('month', fecha) = 9
+AND hora > '14:00' AND hora < '20:00';
+select * from transacciones;

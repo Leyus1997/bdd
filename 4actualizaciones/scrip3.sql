@@ -20,11 +20,11 @@ INSERT INTO estudiantes (cedula, nombre, apellido, email,fecha_nacimiento )
 VALUES ('2345678905', 'Daniel', 'Brown','dbrown@example.org','15-09-1976');
 INSERT INTO estudiantes (cedula, nombre, apellido, email,fecha_nacimiento )
 VALUES ('1788697856', 'Kristy', 'Hunt','bauerangelica@example.net','12-04-1983');
-
 INSERT INTO estudiantes (cedula, nombre, apellido, email,fecha_nacimiento )
 VALUES ('3235768167', 'Dale', 'Young','garciamichael@example.com','06-09-1995');
 INSERT INTO estudiantes (cedula, nombre, apellido, email,fecha_nacimiento )
 VALUES ('1234567898', 'Ana', ' Rodriguez','laura.rodriguez@example.org','30-12-1988');
-select nombre,cedula from estudiantes
-select nombre from estudiantes where cedula like '17%'
-select nombre,apellido from estudiantes where nombre like 'A%'
+
+select * from estudiantes;
+update estudiantes set apellido='Hernández' where cedula like '17%';
+select *from estudiantes;
